@@ -3,10 +3,11 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 .App{
   min-height: 100vh;
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  background: #fff;
 }
 img{
   width: 100%;
@@ -14,7 +15,7 @@ img{
 }
 
 .navbar{
-  background-color: rgb(144, 224, 144);
+  background-color: #1f3057;
   padding: 1em ;
 }
 .search-form{
@@ -31,6 +32,8 @@ img{
 
 .search-bar{
   width: 30%;
+  min-width: 200px;
+  max-width: 250px;
   border: none;
   padding: 0.6em;
   border: 2px solid black;
@@ -72,11 +75,30 @@ img{
 }
 
 .recipes{
+  width: 60%;
+  margin: 1em auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  background: #D3CCE3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+@media (max-width:765px) {
+  .search-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .search-bar{
+    width: 50%;
+    text-align: center;
+  }
+  
+}
+@media (max-width:875px) {
+  .recipes{
+    flex-direction: column;
+    width: 80%;
+  }
 }

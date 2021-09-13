@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Recipe from './components/Recipe';
+import Header from './components/Header';
 
 function App() {
   const API_ID = '6ed157de';
@@ -14,7 +15,7 @@ function App() {
     getRecipies();
   }, [query])
 
-  const getRecipies = async () => {
+    const getRecipies = async () => {
     const response = await fetch('https://api.edamam.com/api/recipes/v2?type=public&q=' + query + '&app_id=' + API_ID + '&app_key=' + API_KEY);
     const data = await response.json();
     setRecipes(data.hits);
@@ -34,17 +35,18 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <nav className="navbar">
-      <form onSubmit={getSearch} className="search-form" >
-        <input 
-        className="search-bar" 
-        type="text" 
-        value={search} 
-        onChange={updateSearch} 
-        placeholder="Enter Recipe Name"/>
-        <button className="search-button" type="submit">Search</button>
-      </form>
-      </nav>
+            <form onSubmit={getSearch} className="search-form" >
+                <input
+                    className="search-bar"
+                    type="text"
+                    value={search}
+                    onChange={updateSearch}
+                    placeholder="Find a Recipe" />
+                <button className="search-button" type="submit">Search</button>
+            </form>
+        </nav>
       <div className="recipes">
         {recipes.map((recipe,index) => (
           <Recipe
