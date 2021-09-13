@@ -1,5 +1,4 @@
 
-  
   .recipe{
     box-shadow: 10px 16px 37px -30px rgba(0,0,0,0.52);
     -webkit-box-shadow: 10px 16px 37px -30px rgba(0,0,0,0.52);
@@ -13,13 +12,12 @@
     background-color: hsl(0, 0%, 90%);
     position: relative;
     z-index: 1;
-
   }
-  .recipe:hover, .recipe:active{
+  .recipe:hover, .recipe:focus-within{
     transform: scale(1.002);
-    background-color: hsl(0, 0%, 85%);
+    background-color: hsl(0, 0%, 80%);
   }
-  .title a:hover{
+  .title a:hover,  .title a:focus{
     text-decoration: underline;
   }
   .title a{
